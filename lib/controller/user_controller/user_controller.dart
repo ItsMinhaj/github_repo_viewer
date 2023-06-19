@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:github_repo_viewer/widgets/error_show_dialog.dart';
+import 'package:github_repo_viewer/utils/error_show_dialog.dart';
 import '../../services/fetch_user.dart';
 
 class UserController extends GetxController {

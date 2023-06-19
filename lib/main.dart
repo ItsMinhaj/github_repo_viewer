@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       builder: (BuildContext context, Widget? child) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Github Repo',
+          title: 'Github Repo Viewer',
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(
               seedColor: Colors.deepPurple,

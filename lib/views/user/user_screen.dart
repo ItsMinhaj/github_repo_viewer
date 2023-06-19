@@ -13,7 +13,7 @@ class UserScreen extends HookWidget {
   Widget build(BuildContext context) {
     final formkey = GlobalKey<FormState>();
     final userTextController = useTextEditingController();
-    final userController = Get.find<UserController>();
+    final userController = Get.put(UserController());
     return Scaffold(
       appBar: AppBar(
         title: const Text("User Screen"),
@@ -43,7 +43,7 @@ class UserScreen extends HookWidget {
                   await userController.fetchUser(
                       userName: userTextController.text);
                   if (userController.user.value.isNotEmpty) {
-                    Get.offNamed(Routes.home);
+                    Get.toNamed(Routes.home);
                   }
                 }
               },

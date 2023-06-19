@@ -2,12 +2,17 @@ import 'package:get/get.dart';
 import 'package:github_repo_viewer/controller/user_controller/user_controller.dart';
 import '../../../services/fetch_repo.dart';
 import '../../model/reposityor_model.dart';
-import '../../widgets/error_show_dialog.dart';
+import '../../utils/error_show_dialog.dart';
 
 class ShowRepoController extends GetxController {
-  final userController = Get.find<UserController>();
+  final userController = Get.put(UserController());
   final isLoading = false.obs;
   final repoList = <RepositoryModel>[].obs;
+
+  final isDarkActive = false.obs;
+  void toggle() {
+    isDarkActive.value = !isDarkActive.value;
+  }
 
   Future<void> fetchAllRepo() async {
     isLoading(true);
