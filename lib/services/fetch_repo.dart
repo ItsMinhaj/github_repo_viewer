@@ -12,7 +12,7 @@ class RemoteServices {
     try {
       final dio = Dio();
       final repoUrl = '$baseUrl/users/$repoUserName/repos';
-      print("Repo Url = $repoUrl");
+
       final response = await dio.get(repoUrl);
       if (response.statusCode == 200) {
         final List<dynamic> jsonString = response.data;
