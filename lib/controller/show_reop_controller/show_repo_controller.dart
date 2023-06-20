@@ -25,6 +25,14 @@ class ShowRepoController extends GetxController {
     });
   }
 
+  void sortByDate(){
+    repoList.sort((a,b)=> a.createdAt.compareTo(b.createdAt));
+  }
+
+  void sortByName(){
+    repoList.sort((a,b)=> a.name.compareTo(b.name));
+  }
+
   @override
   void onInit() async {
     await fetchAllRepo();

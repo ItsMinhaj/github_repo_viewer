@@ -22,6 +22,25 @@ class HomeScreen extends StatelessWidget {
             Tab(icon: Icon(Icons.list)),
             Tab(icon: Icon(Icons.grid_on)),
           ]),
+         actions: [
+           PopupMenuButton(
+             itemBuilder: (ctx) => [
+               PopupMenuItem(
+                 child: const  Text("Sort by Date"),
+                 onTap: (){
+                   showRepoController.sortByDate();
+                 },
+               ),
+          PopupMenuItem(
+          child:  const  Text("Sort by name"),
+            onTap: (){
+            showRepoController.sortByName();
+            },
+    ),
+
+             ],
+           )
+         ],
         ),
         body: TabBarView(
           children: [
